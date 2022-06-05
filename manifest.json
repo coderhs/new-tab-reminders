@@ -1,0 +1,12 @@
+{
+   "author": "Harisankar P S",
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+   "description": "An extension which loads a reminder todo when opening a new tab.",
+   "incognito": "split",
+   "manifest_version": 3,
+   "name": "New Tab Reminder",
+   "version": "1.0.0"
+}
+
