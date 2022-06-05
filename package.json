@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && yarn copy-icon_128",
-    "build-google": "yarn build && cp -rf ./dist ./dist-google && yarn manifest-v3",
-    "build-firefox": "yarn build && cp -rf ./dist ./dist-firefox && yarn manifest-v2",
+    "build-google": "yarn build && rm -rf ./dist-google && cp -rf ./dist ./dist-google && yarn manifest-v3",
+    "build-firefox": "yarn build && rm -rf ./dist-firefox && cp -rf ./dist ./dist-firefox && yarn manifest-v2",
     "lint": "vue-cli-service lint",
     "copy-icon_128": "cp ./src/assets/icon_128.png ./dist/",
     "manifest-v3": "cp ./src/manifest_v3.json ./dist-google/manifest.json",
