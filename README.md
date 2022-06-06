@@ -4,9 +4,9 @@
 
 The project is build using:
 
-Node version 17.9.0
-Yarn version 1.22.15
-OS: Linux
+* Node version 17.9.0
+* Yarn version 1.22.15
+* OS: Linux
 
 ```
 yarn install
@@ -42,3 +42,7 @@ yarn build-firefox
 ```
 yarn lint
 ```
+
+Credits:
+
+Initial vue todo app was build using the code form: [Vue.js workshops](https://public.vuejsworkshops.com/guide/todos/)
