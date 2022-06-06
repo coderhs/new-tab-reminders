@@ -55,10 +55,12 @@ export default {
         this.todos = JSON.parse(localStorage.getItem("todos"));
       } catch (e) {
         localStorage.removeItem("todos");
-        localStorage.setItem("todos", JSON.stringify([{id: 1, title: 'Schedule time for Joy', isCompleted: false}]));
+        localStorage.setItem("todos", JSON.stringify([]));
+        this.todos = JSON.parse(localStorage.getItem("todos"));
       }
     } else {
-      localStorage.setItem("todos", JSON.stringify([{id: 1, title: 'Schedule time for Joy', isCompleted: false}]));
+      localStorage.setItem("todos", JSON.stringify([]));
+      this.todos = JSON.parse(localStorage.getItem("todos"));
     }
   },
   data() {
