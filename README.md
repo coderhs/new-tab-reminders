@@ -6,6 +6,7 @@ The project is build using:
 
 Node version 17.9.0
 Yarn version 1.22.15
+OS: Linux
 
 ```
 yarn install
