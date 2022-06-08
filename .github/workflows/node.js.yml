@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 16.14.2
       - run: yarn build
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.6.2
+        with:
+          directory: ./dist
+          filename: release.zip
   build-google:
     name: Build Google
     runs-on: ubuntu-22.04
@@ -28,11 +33,11 @@ jobs:
         with:
           node-version: 16.14.2
       - run: yarn build-google
-      - uses: actions/download-artifact@v3
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.6.2
         with:
-          name: my-artifact
-      - name: Display structure of downloaded files
-        run: ls -R
+          directory: ./dist-google
+          filename: release-google.zip
   build-firefox:
     name: Build Firefox
     runs-on: ubuntu-22.04
@@ -41,9 +46,9 @@ jobs:
       - uses: DerYeger/yarn-setup-action@master
         with:
           node-version: 16.14.2
-      - run: yarn build-frefox
-      - uses: actions/download-artifact@v3
+      - run: yarn build-firefox
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.6.2
         with:
-          name: my-artifact
-      - name: Display structure of downloaded files
-        run: ls -R
+          directory: ./dist-firefox
+          filename: release-firefox.zip
