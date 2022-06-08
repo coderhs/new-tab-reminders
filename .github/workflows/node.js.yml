@@ -21,7 +21,7 @@ jobs:
       - run: yarn build
       - uses: actions/upload-artifact@v2
         with:
-          name: release.zip
+          name: release
           path: ./dist
   build-google:
     name: Build Google
@@ -34,7 +34,7 @@ jobs:
       - run: yarn build-google
       - uses: actions/upload-artifact@v2
         with:
-          name: release-google.zip
+          name: release-google
           path: ./dist-google
   build-firefox:
     name: Build Firefox
@@ -47,5 +47,5 @@ jobs:
       - run: yarn build-firefox
       - uses: actions/upload-artifact@v2
         with:
-          name: release-firefox.zip
+          name: release-firefox
           path: ./dist-firefox
