@@ -1,0 +1,49 @@
+name: CI
+
+on: [pull_request, push]
+
+jobs:
+  prepare:
+    name: Prepare
+    runs-on:  ubuntu-22.04
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16.14.2
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    needs: prepare
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16.14.2
+      - run: yarn build
+  build-google:
+    name: Build Google
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16.14.2
+      - run: yarn build-google
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
+  build-firefox:
+    name: Build Firefox
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16.14.2
+      - run: yarn build-frefox
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
