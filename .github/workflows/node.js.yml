@@ -27,7 +27,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: release.zip
-          path: ./
+          path: ./dist
   build-google:
     name: Build Google
     runs-on: ubuntu-22.04
