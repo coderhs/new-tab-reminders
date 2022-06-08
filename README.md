@@ -7,7 +7,7 @@ The project is build using:
 * Node version 16.14.2
 * Yarn version 1.22.15
 * npm version: 8.5.5
-* OS: Linux
+* OS: Ubuntu 22.04
 
 ```
 yarn install
