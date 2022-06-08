@@ -19,11 +19,6 @@ jobs:
         with:
           node-version: 16.14.2
       - run: yarn build
-      - name: Zip Release
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          directory: ./dist
-          filename: release.zip
       - uses: actions/upload-artifact@v2
         with:
           name: release.zip
@@ -37,14 +32,10 @@ jobs:
         with:
           node-version: 16.14.2
       - run: yarn build-google
-      - name: Zip Release
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          directory: ./dist-google
-          filename: release-google.zip
       - uses: actions/upload-artifact@v2
         with:
           name: release-google.zip
+          path: ./dist-google
   build-firefox:
     name: Build Firefox
     runs-on: ubuntu-22.04
@@ -54,11 +45,7 @@ jobs:
         with:
           node-version: 16.14.2
       - run: yarn build-firefox
-      - name: Zip Release
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          directory: ./dist-firefox
-          filename: release-firefox.zip
       - uses: actions/upload-artifact@v2
         with:
           name: release-firefox.zip
+          path: ./dist-firefox
