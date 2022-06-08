@@ -24,10 +24,15 @@ jobs:
         with:
           directory: ./dist
           filename: release.zip
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: release.zip
+          path: ./release.zip
   build-google:
     name: Build Google
     runs-on: ubuntu-22.04
-    needs: build
+    needs: prepare
     steps:
       - uses: DerYeger/yarn-setup-action@master
         with:
@@ -38,10 +43,15 @@ jobs:
         with:
           directory: ./dist-google
           filename: release-google.zip
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: release-google.zip
+          path: ./release-google.zip
   build-firefox:
     name: Build Firefox
     runs-on: ubuntu-22.04
-    needs: build
+    needs: prepare
     steps:
       - uses: DerYeger/yarn-setup-action@master
         with:
@@ -52,3 +62,8 @@ jobs:
         with:
           directory: ./dist-firefox
           filename: release-firefox.zip
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: release-firefox.zip
+          path: ./release-firefox.zip
