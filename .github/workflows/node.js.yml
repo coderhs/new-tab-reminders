@@ -24,11 +24,9 @@ jobs:
         with:
           directory: ./dist
           filename: release.zip
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
+      - uses: actions/upload-artifact@v2
         with:
           name: release.zip
-          path: ./release.zip
   build-google:
     name: Build Google
     runs-on: ubuntu-22.04
@@ -43,11 +41,9 @@ jobs:
         with:
           directory: ./dist-google
           filename: release-google.zip
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
+      - uses: actions/upload-artifact@v2
         with:
           name: release-google.zip
-          path: ./release-google.zip
   build-firefox:
     name: Build Firefox
     runs-on: ubuntu-22.04
@@ -62,8 +58,6 @@ jobs:
         with:
           directory: ./dist-firefox
           filename: release-firefox.zip
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
+      - uses: actions/upload-artifact@v2
         with:
           name: release-firefox.zip
-          path: ./release-firefox.zip
