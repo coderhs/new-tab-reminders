@@ -6,7 +6,7 @@
    "description": "An extension which loads a reminder todo when opening a new tab.",
    "manifest_version": 2,
    "name": "New Tab Reminder",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "icons": {
       "128": "icon_128.png"
     }
