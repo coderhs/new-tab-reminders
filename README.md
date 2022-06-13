@@ -47,3 +47,6 @@ yarn lint
 Credits:
 
 Initial vue todo app was build using the code form: [Vue.js workshops](https://public.vuejsworkshops.com/guide/todos/)
+Source code is available at: https://github.com/coderhs/new-tab-reminders
+
+Feel free to fork, make modification and send a pull request. 
