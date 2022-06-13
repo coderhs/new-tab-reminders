@@ -23,27 +23,11 @@ jobs:
         with:
           name: release
           path: ./dist
-  build-google:
-    name: Build Google
-    runs-on: ubuntu-22.04
-    needs: prepare
-    steps:
-      - uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 16.14.2
       - run: yarn build-google
       - uses: actions/upload-artifact@v2
         with:
           name: release-google
           path: ./dist-google
-  build-firefox:
-    name: Build Firefox
-    runs-on: ubuntu-22.04
-    needs: prepare
-    steps:
-      - uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 16.14.2
       - run: yarn build-firefox
       - uses: actions/upload-artifact@v2
         with:
