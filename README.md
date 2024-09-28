@@ -1,5 +1,7 @@
 # new-tab-reminder
 
+[Chrome Extension](https://chromewebstore.google.com/detail/New%20Tab%20Reminder/mcgmfombdolcfpnbcefghclidgbdabih?hl=en-GB&authuser=0)
+
 ## Project setup
 
 The project is build using:
